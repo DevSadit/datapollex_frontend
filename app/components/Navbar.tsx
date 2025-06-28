@@ -1,9 +1,16 @@
 "use client";
 import { Menu, X } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+     const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
     
   return (
         <nav
@@ -37,7 +44,7 @@ const Navbar = () => {
                   href="#about"
                   className="hover:text-blue-600 transition-colors duration-200"
                 >
-                  About
+                  Courses
                 </a>
                 <a
                   href="#testimonials"

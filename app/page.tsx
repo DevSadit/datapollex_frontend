@@ -1,18 +1,19 @@
-import About from "./components/About";
+
+import Cta from "./components/Cta";
 import Features from "./components/Features";
 import Hero from "./components/Hero";
-import Landing from "./components/Landing";
 import Status from "./components/Status";
+import Testimonial from "./components/Testimonial";
 
 export default function Home() {
   return (
     <>
       <div className="">
-       <Landing/>
        <Hero/>
        <Status/>
        <Features/>
-       <About/>
+       <Testimonial/>
+       <Cta/>
       </div>
     </>
   );
