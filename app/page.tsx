@@ -1,11 +1,18 @@
-import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Features from "./components/Features";
+import Hero from "./components/Hero";
+import Landing from "./components/Landing";
+import Status from "./components/Status";
 
 export default function Home() {
   return (
     <>
       <div className="">
-        <Navbar />
-        
+       <Landing/>
+       <Hero/>
+       <Status/>
+       <Features/>
+       <About/>
       </div>
     </>
   );
