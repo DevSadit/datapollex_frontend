@@ -39,6 +39,8 @@ const Hero = () => {
         {/* Floating cards animation */}
         <div className="mt-16 relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            
+            
             {[1, 2, 3].map((i) => (
               <div
                 key={i}

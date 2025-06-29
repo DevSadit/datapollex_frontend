@@ -1,11 +1,16 @@
 import { Star } from "lucide-react";
 import React from "react";
+import image1 from "../../public/p1.jpg";
+import image2 from "../../public/p2.jpg";
+import image3 from "../../public/p3.jpg";
+import Image from "next/image";
 
 const Testimonial = () => {
      const testimonials = [
     {
       name: "Sarah Johnson",
       role: "Software Developer",
+      img: image1,
       content:
         "Nexdu transformed my learning experience. The progressive course structure helped me master complex topics step by step.",
       rating: 5,
@@ -13,6 +18,7 @@ const Testimonial = () => {
     {
       name: "Mike Chen",
       role: "Data Scientist",
+      img: image2,
       content:
         "The admin dashboard is incredibly intuitive. I can easily manage my courses and track student progress.",
       rating: 5,
@@ -20,13 +26,14 @@ const Testimonial = () => {
     {
       name: "Emily Davis",
       role: "UX Designer",
+      img: image3,
       content:
         "Beautiful interface and smooth learning experience. The dark mode is perfect for late-night studying!",
       rating: 5,
     },
   ];
   return (
-    <section id="testimonials" className="py-20">
+    <section id="reviews" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -45,7 +52,7 @@ const Testimonial = () => {
               className="bg-white border p-4 rounded-xl border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700"
             >
               <div className="flex mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
+                {[...Array(testimonial.rating)].map((a, i) => (
                   <Star
                     key={i}
                     className="w-5 h-5 text-yellow-400 fill-current"
@@ -56,8 +63,10 @@ const Testimonial = () => {
                 &quot;{testimonial.content}&quot;
               </p>
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold mr-4">
-                  {testimonial.name.charAt(0)}
+                <div className=" rounded-full flex items-center justify-center mr-4">
+                  {testimonial.img && (
+                    <Image src={testimonial.img} width={40} height={40} alt={testimonial.name} className="rounded-full" />
+                  )}
                 </div>
                 <div>
                   <h4 className="font-semibold">{testimonial.name}</h4>
